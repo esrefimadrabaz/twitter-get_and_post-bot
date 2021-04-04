@@ -12,16 +12,16 @@ api = tweepy.API(auth)
 
 
 
-def listeyap():
+def listeyap():              # x is post count and z is the count of images in the post --------------- uses lists within lists
     my_dict = {}
-    x = 0
+    x = 0       
     for tweet in tweepy.Cursor(api.user_timeline, id=  'TooSatisfied', tweet_mode="extended", include_rts=False).items():
-        if not tweet.retweeted:
-            fav = tweet.favorite_count
-            if fav >= 1000:
+        if not tweet.retweeted:       #remove if u want to get rt tweets in the page
+            fav = tweet.favorite_count    
+            if fav >= 1000:       # favorite limit
                 z = 0
-                my_dict["post" + str(x)] = {}
-                if 'media' in tweet.entities:
+                my_dict["post" + str(x)] = {}      #make the first item for the first post (can probably cause the first post to be empty but works)
+                if 'media' in tweet.entities:        #check if tweet has 'media' tag in it, then checks if its a video or image(s)
                     for image in tweet.extended_entities['media']:
                         tip = image['type']
                         if tip == 'video':
@@ -43,9 +43,3 @@ def listeyap():
 
 
 listeyap()
-
-"""x = {"2" : "bum"}
-x.update({"y" : {"1" : "hey", "2" : "bum"}})
-print(x["y"])
-uzun = len(x["y"])
-print(uzun)"""
