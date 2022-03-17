@@ -5,10 +5,10 @@ import requests
 import youtube_dl
 import time
 
-CONSUMER_KEY ="9JYejRYfJRNHuoV2nC4z8T227"
-CONSUMER_SECRET = "Wxua1fgTfexMd6mI27r91UQHPTx8rq7Q2B84lKdW1OGxeTFUha"
-ACCESS_KEY = "2700009857-4qEG8lpxft1LopUCjGcpUh7yOv8qrzxE6Cptf7E"
-ACCESS_SECRET = "mGWvKbMfJXYyvaE4OiqtgnTXE78AkKtkDfl21RCZt996a"
+CONSUMER_KEY =""
+CONSUMER_SECRET = ""
+ACCESS_KEY = ""
+ACCESS_SECRET = ""
 
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
